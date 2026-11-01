@@ -1,0 +1,5 @@
+# Optional inference environment inputs, not a tested lock or an installation step.
+# Resolve and freeze these separately on the machine chosen for model evaluation.
+qwen-tts>=0.1.1
+torch>=2.5.0
+soundfile>=0.12.0

@@ -1,0 +1,17 @@
+import {McpServer} from '@modelcontextprotocol/sdk/server/mcp.js';
+import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
+import {z} from 'zod';
+import path from 'node:path';import fs from 'node:fs/promises';import {fileURLToPath} from 'node:url';import {execFile} from 'node:child_process';import {promisify} from 'node:util';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),run=promisify(execFile);
+const server=new McpServer({name:'vn-ai-content-kit',version:'0.1.0'});
+const safe=fn=>async a=>{try{return {content:[{type:'text',text:JSON.stringify(await fn(a))}]};}catch(e){return {isError:true,content:[{type:'text',text:e.message}]};}};
+const cli=async args=>{const r=await run(process.execPath,[path.join(root,'scripts','kit.mjs'),...args],{cwd:root,timeout:300000,maxBuffer:4*1024*1024,windowsHide:true});return JSON.parse(r.stdout);};
+const ro={readOnlyHint:true,destructiveHint:false,openWorldHint:false};
+server.registerTool('kit_status',{description:'Check existing local Vietnamese voice assets. Does not load a model, train, download or approve audio.',inputSchema:{},annotations:ro},safe(()=>cli(['status'])));
+server.registerTool('prepare_script',{description:'Normalize and inspect supplied Vietnamese ad copy. Does not invent facts, generate a model answer or approve narration.',inputSchema:{scriptFile:z.string().min(1)},annotations:ro},safe(a=>cli(['prepare-script',a.scriptFile])));
+server.registerTool('render_voice',{description:'Render an offline Vietnamese preview with the existing local preset. Exact output needs listening review; no account publishing or cloning.',inputSchema:{scriptFile:z.string().min(1)},annotations:{...ro,readOnlyHint:false}},safe(a=>cli(['voice-render',a.scriptFile])));
+server.registerTool('rag_build',{description:'Build an isolated index from supplied verified facts; false/unverified facts are refused. No model training.',inputSchema:{factsFile:z.string().min(1)},annotations:{...ro,readOnlyHint:false}},safe(async a=>{const dir=path.join(root,'data','rag');await fs.mkdir(dir,{recursive:true});return cli(['rag-build',a.factsFile,dir]);}));
+server.registerTool('rag_query',{description:'Retrieve grounded Vietnamese editorial context from this kit index. No answer-generation LLM or fine-tuned model attached.',inputSchema:{productId:z.string().min(1),promotionKey:z.string().min(1),query:z.string().min(1).max(2000)},annotations:ro},safe(a=>cli(['rag-query',path.join(root,'data','rag'),a.productId,a.promotionKey,a.query])));
+server.registerTool('hook_review',{description:'Review supplied hook directions for editorial consistency; does not measure audible emphasis.',inputSchema:{directionFile:z.string().min(1)},annotations:ro},safe(a=>cli(['hook-review',a.directionFile])));
+server.registerTool('feedback_context',{description:'Retrieve exact-profile voice correction feedback using a local request file; feedback is not corrected audio or approval.',inputSchema:{requestFile:z.string().min(1)},annotations:ro},safe(a=>cli(['feedback-query',a.requestFile])));
+await server.connect(new StdioServerTransport());

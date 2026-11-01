@@ -1,0 +1,13 @@
+node_modules/
+runtime-link.local.json
+inputs/
+outputs/
+data/
+.env
+*.wav
+*.mp3
+*.onnx
+*.safetensors
+*.pt
+*.pth
+__pycache__/

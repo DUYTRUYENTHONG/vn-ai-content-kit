@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "dataset": {
+    "minClips": 100,
+    "minSeconds": 600,
+    "minSecondsPerClip": 3,
+    "maxSecondsPerClip": 15,
+    "minWords": 3,
+    "maxWords": 100,
+    "minChars": 10,
+    "maxChars": 600,
+    "nearDuplicateRatio": 0.9,
+    "seed": 42
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vn-ai-content-kit",
+  "version": "0.1.0",
+  "description": "Vietnamese ecommerce content and local narration toolkit",
+  "author": {
+    "name": "DUYTRUYENTHONG"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "VN AI Content Kit",
+        "shortDescription": "Copy, RAG và giọng Việt local",
+        "longDescription": "Source-grounded Vietnamese product-ad copy, isolated local RAG, correction memory and offline voice previews. Fine-tuning preparation only; no trained model or account publishing.",
+        "developerName": "DUYTRUYENTHONG",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Tạo nội dung sản phẩm tiếng Việt từ nguồn của workspace, biên tập tự nhiên, truy xuất facts và tạo bản nghe thử cục bộ."
+      }
+    }
+  }
+}

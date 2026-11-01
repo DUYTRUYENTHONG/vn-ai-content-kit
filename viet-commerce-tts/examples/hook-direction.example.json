@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "script": "Có khách sắp ghé nhà chơi? Mình dọn chỗ ngồi trước đã. Rồi cất đồ đang vướng lối đi.",
+  "hook": "Có khách sắp ghé nhà chơi?",
+  "mechanism": "specific-situation",
+  "focusPhrase": "sắp ghé",
+  "pauseAfterPhrase": "nhà chơi?",
+  "payoffPhrase": "dọn chỗ ngồi trước",
+  "buyerConcern": "Không biết bắt đầu dọn ở đâu khi sắp có khách.",
+  "reasonToContinue": "Chọn một việc ưu tiên thay vì ôm hết việc.",
+  "direction": "Nhấn nhẹ vào sắp ghé, giữ ngữ điệu hỏi rồi nghỉ tự nhiên trước câu trả lời. Không hét, không tăng tốc cả câu.",
+  "sourceRefs": ["example:unvalidated-editorial-hypothesis"]
+}

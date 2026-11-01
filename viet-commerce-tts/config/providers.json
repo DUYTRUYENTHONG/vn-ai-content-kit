@@ -1,0 +1,26 @@
+{
+  "language": "vi-VN",
+  "domain": [
+    "product-ads",
+    "ecommerce"
+  ],
+  "providers": [
+    {
+      "id": "gwen",
+      "architecture": "qwen3-tts",
+      "model": "g-group-ai-lab/gwen-tts-0.6B",
+      "licenseMetadata": "MIT",
+      "status": "local-adapter-requires-assets-consented-reference-and-validation"
+    },
+    {
+      "id": "vieneu",
+      "licenseMetadata": "Apache-2.0 upstream; retain model notices",
+      "status": "reference-reviewed; adapter-extension-point"
+    },
+    {
+      "id": "v-tts",
+      "licenseMetadata": "CC-BY-NC-4.0",
+      "status": "review-only-not-enabled-for-commercial-generation"
+    }
+  ]
+}

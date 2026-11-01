@@ -1,0 +1,23 @@
+{
+  "provider": "gwen-tts",
+  "repository": "https://github.com/ggroup-ai-lab/gwen-tts",
+  "sourceRevision": "f0f24d8636596dc635323e02f41bee42bb64385e",
+  "model": "g-group-ai-lab/gwen-tts-0.6B",
+  "modelRevision": "a83e1f08656d48217a83f0ad422d1610d5b5c963",
+  "modelCardLicense": "MIT",
+  "sourceLicenseMetadata": "MIT in pyproject.toml; no standalone LICENSE file observed",
+  "architecture": "Qwen3-TTS-12Hz-0.6B-Base derivative",
+  "trainingSource": "https://github.com/QwenLM/Qwen3-TTS",
+  "trainingSourceRevision": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+  "trainingSourceLicense": "Apache-2.0",
+  "tokenizer": "Qwen/Qwen3-TTS-Tokenizer-12Hz",
+  "tokenizerRevision": "7dd38ad4e9bad454aae9cd937d0cd577604fe229",
+  "status": "experimental_preparation_only",
+  "trainingMethod": "upstream full-parameter single-speaker SFT, not the existing VieNeu LoRA",
+  "gwenCheckpointTrainingCompatibilityVerified": false,
+  "referenceSpeakerConsentVerified": false,
+  "upstreamInferenceExecuted": false,
+  "modelWeightsDownloaded": false,
+  "trainingExecuted": false,
+  "productionReady": false
+}

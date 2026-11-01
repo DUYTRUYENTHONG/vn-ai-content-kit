@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "vn-ai-content-kit": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/dist/content-mcp.mjs"
+      ],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

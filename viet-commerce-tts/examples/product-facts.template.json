@@ -1,0 +1,15 @@
+[
+  {
+    "sourceId": "replace-with-label-source",
+    "productId": "replace-with-product-id",
+    "promotionKey": "evergreen",
+    "section": "identity",
+    "text": "Điền thông tin thực tế từ nhãn sản phẩm đã kiểm tra.",
+    "sourceUri": "replace-with-actual-source",
+    "sourceHash": "replace-with-actual-source-checksum",
+    "verified": false,
+    "verifiedAt": "2026-10-31T00:00:00+07:00",
+    "validFrom": "2026-10-31T00:00:00+07:00",
+    "claimFields": []
+  }
+]

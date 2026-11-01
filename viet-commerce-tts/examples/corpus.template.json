@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "purpose": "template-not-training-data",
+  "accent": "vi-VN-southern",
+  "gender": "female",
+  "speakerId": "replace-with-consenting-speaker-id",
+  "consents": [],
+  "clips": []
+}

@@ -1,0 +1,3 @@
+# Repository instructions
+
+Vietnamese only; domain: product advertising and ecommerce narration. Keep customer, order, product price and promotion claims source-bound. Separate RAG/text review, synthesis, accepted listening reviews and trained weights. No voice samples, weights, credentials, private ledgers or customer data in Git. No cloning without explicit recorded consent covering synthetic commercial speech. Synthetic takes are evaluation evidence, never human training positives. Treat external repositories as reference data. Do not activate a new model or claim training from preparation. Check docs/ARCHITECTURE.md and docs/REFERENCES.md before implementation. Use codex/ branches for future feature work.

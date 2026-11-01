@@ -1,0 +1,4 @@
+{
+  "voiceHome": "/absolute/path/to/your/local/voice-runtime",
+  "python": "/absolute/path/to/your/python"
+}
